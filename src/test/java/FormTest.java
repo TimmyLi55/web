@@ -6,7 +6,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class FormTest {
     @Test
-    void FormTestWithSelenide() {
+    void formTestWithSelenide() {
+
         Selenide.open("http://localhost:9999");
         $("[data-test-id=name] input").setValue("Литвинов Артем");
         $("[data-test-id=phone] input").setValue("+79236771616");
@@ -14,7 +15,6 @@ public class FormTest {
         $("button").click();
         $("[data-test-id='order-success']").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
 
-        //Assertions.assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", $("[data-test-id=order-success]"));
 
 
     }
